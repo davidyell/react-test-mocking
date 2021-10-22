@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import logo from './logo.svg'
 import './App.css'
-import {FetchCard} from './Card/FetchCard'
+import FetchCard from './Card/FetchCard'
 import {ICard} from './Card/ICard'
 
 function App() {
   const [card, setCard] = useState<ICard>()
 
   useEffect(() => {
-    FetchCard().then(result => {
-      setCard(result)
-    })
+    FetchCard().then(result => setCard(result))
   }, [card])
 
   return (
